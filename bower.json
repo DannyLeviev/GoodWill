@@ -1,0 +1,19 @@
+{
+  "name": "GoodWill",
+  "version": "0.0.0",
+  "homepage": "https://github.com/DannyLeviev/GoodWill",
+  "authors": [
+    "DannyLeviev <danny.leviev@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.2"
+  }
+}

@@ -12,10 +12,10 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(express.static(path.join(__dirname, 'bower_components')));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
@@ -39,6 +39,7 @@ if (app.get('env') === 'development') {
             error: err
         });
     });
+    app.use(logger('dev'));
 }
 
 // production error handler
