@@ -1,6 +1,6 @@
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
-var usersModel = require('./models/users');
+var usersModel = require('../models/users');
 
 
 passport.use(new LocalStrategy(
@@ -12,7 +12,7 @@ passport.use(new LocalStrategy(
 	 		} 
 	 		else{
 	 			if(users[0] && users[0].password == password){
-	 				console.log('My log: ' + users[0].username + ' just loged in.');
+	 				console.log('My log: ' + users[0].username + ' authenticated.');
 	 				return done(null, {userid: users[0].userid, username: users[0].username});
 	 			}
 	 			return done(null, false);
