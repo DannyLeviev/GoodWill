@@ -6,6 +6,8 @@ var passport = require('../authentication');
 var expressSession = require('express-session'); 
 //establishing the connection to mongoDB.
 var db = require('../db_connection'); 
+//using the util functions
+var utils = require('../utils');
 
 
 router.use(expressSession({
@@ -51,7 +53,7 @@ router.get('/select', function(req, res) {
 	if(req.user && req.user.username){
 		GLOBAL.userName = req.user.username;
 		console.log('My log: ' + GLOBAL.userName + ' has entered the Select page.');
-		res.render('select');
+		utils.getAllFeeds(res);
 	}
 	//else load the login page
     else res.render('login');

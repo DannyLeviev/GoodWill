@@ -1,0 +1,197 @@
+
+Demo data for feeds (delete this file):
+
+==================================  Feeds  ================================
+
+{
+	"creator":"i111111",
+	"expirationDate":"20140111",
+	"takenBy":"i444444",
+	"isDone":"true",
+	"title":"This is a title.",
+	"text":"This task was done in past! This is a text of this feed. This is a text of this feed.",
+	"image":"TBD"
+}
+{
+	"creator":"i111111",
+	"expirationDate":"20140211",
+	"takenBy":"",
+	"isDone":"false",
+	"title":"This is a title.",
+	"text":"This task expired but and not taken! This is a text of this feed. This is a text of this feed.",
+	"image":"TBD"
+}
+{
+	"creator":"i111111",
+	"expirationDate":"20150611",
+	"takenBy":"i555555",
+	"isDone":"true",
+	"title":"This is a title.",
+	"text":"This task was done, but it's expiration date is in future! This is a text of this feed. This is a text of this feed.",
+	"image":"TBD"
+}
+{
+	"creator":"i111111",
+	"expirationDate":"20150611",
+	"takenBy":"i666666",
+	"isDone":"false",
+	"title":"This is a title.",
+	"text":"This task taken but not done yet! This is a text of this feed. This is a text of this feed.",
+	"image":"TBD"
+}
+{
+	"creator":"i111111",
+	"expirationDate":"20150526",
+	"takenBy":"",
+	"isDone":"false",
+	"title":"This is a title.",
+	"text":"This task not taken yet! This is a text of this feed. This is a text of this feed.",
+	"image":"TBD"
+}
+
+
+{
+	"creator":"i222222",
+	"expirationDate":"20140111",
+	"takenBy":"i444444",
+	"isDone":"true",
+	"title":"This is a title.",
+	"text":"This task was done in past! This is a text of this feed. This is a text of this feed.",
+	"image":"TBD"
+}
+{
+	"creator":"i222222",
+	"expirationDate":"20140211",
+	"takenBy":"",
+	"isDone":"false",
+	"title":"This is a title.",
+	"text":"This task expired but and not taken! This is a text of this feed. This is a text of this feed.",
+	"image":"TBD"
+}
+{
+	"creator":"i222222",
+	"expirationDate":"20150611",
+	"takenBy":"i555555",
+	"isDone":"true",
+	"title":"This is a title.",
+	"text":"This task was done, but it's expiration date is in future! This is a text of this feed. This is a text of this feed.",
+	"image":"TBD"
+}
+{
+	"creator":"i222222",
+	"expirationDate":"20150611",
+	"takenBy":"i666666",
+	"isDone":"false",
+	"title":"This is a title.",
+	"text":"This task taken but not done yet! This is a text of this feed. This is a text of this feed.",
+	"image":"TBD"
+}
+{
+	"creator":"i222222",
+	"expirationDate":"20150526",
+	"takenBy":"",
+	"isDone":"false",
+	"title":"This is a title.",
+	"text":"This task not taken yet! This is a text of this feed. This is a text of this feed.",
+	"image":"TBD"
+}
+
+
+{
+	"creator":"i333333",
+	"expirationDate":"20140111",
+	"takenBy":"i444444",
+	"isDone":"true",
+	"title":"This is a title.",
+	"text":"This task was done in past! This is a text of this feed. This is a text of this feed.",
+	"image":"TBD"
+}
+{
+	"creator":"i333333",
+	"expirationDate":"20140211",
+	"takenBy":"",
+	"isDone":"false",
+	"title":"This is a title.",
+	"text":"This task expired but and not taken! This is a text of this feed. This is a text of this feed.",
+	"image":"TBD"
+}
+{
+	"creator":"i333333",
+	"expirationDate":"20150611",
+	"takenBy":"i555555",
+	"isDone":"true",
+	"title":"This is a title.",
+	"text":"This task was done, but it's expiration date is in future! This is a text of this feed. This is a text of this feed.",
+	"image":"TBD"
+}
+{
+	"creator":"i333333",
+	"expirationDate":"20150611",
+	"takenBy":"i666666",
+	"isDone":"false",
+	"title":"This is a title.",
+	"text":"This task taken but not done yet! This is a text of this feed. This is a text of this feed.",
+	"image":"TBD"
+}
+{
+	"creator":"i333333",
+	"expirationDate":"20150526",
+	"takenBy":"",
+	"isDone":"false",
+	"title":"This is a title.",
+	"text":"This task not taken yet! This is a text of this feed. This is a text of this feed.",
+	"image":"TBD"
+}
+
+
+
+
+
+
+
+
+==================================  Users  ================================
+
+{ 
+   "_id" : ObjectId("54cbac9a249d5ce5adbfe7cb"), 
+   "userid" : "i111111", 
+   "password" : "abc123",
+   "username" : "Rishon" 
+}
+{ 
+	"_id" : ObjectId("54cbadb0249d5ce5adbfe7cc"),
+	"userid" : "i222222", 
+	"password" : "abc123", 
+	"username" : "Sheny" 
+}
+{ 
+	"_id" : ObjectId("54cbadd6249d5ce5adbfe7cd"), 
+	"userid" : "i333333", 
+	"password" : "abc123", 
+	"username" : "Shlishy" 
+}
+{ 
+	"_id" : ObjectId("54cbadde249d5ce5adbfe7ce"), 
+	"userid" : "i444444", 
+	"password" : "abc123", 
+	"username" : "Riviy" 
+}
+{
+	"_id" : ObjectId("54cbae01249d5ce5adbfe7cf"), 
+	"userid" : "i555555", 
+	"password" : "abc123", 
+	"username" : "Hamishy"
+}
+{ 
+	"_id" : ObjectId("54cbae0c249d5ce5adbfe7d0"), 
+	"userid" : "i666666", 
+	"password" : "abc123", 
+	"username" : "Sishy" 
+}
+{ 
+	"_id" : ObjectId("54cbae14249d5ce5adbfe7d1"), 
+	"userid" : "i777777", 
+	"password" : "abc123", 
+	"username" : "Shviee" 
+}
+

@@ -1,12 +1,53 @@
-
-
 body{
-  background-color: #e9eaed;
+    background-color: #e9eaed;
 }
 
 
 #loginContainer{
-  margin-top: 5%;
-  min-width: 300px;
-  width: 33%;
+	margin-top: 5%;
+    min-width: 300px;
+    width: 33%;
+    display: block;
+}
+
+
+#mainContainer{
+	margin-top: 60px;
+	width: 950px;
+}
+
+
+#leftBar{
+	float : left;
+    width : 19%;
+    height : 100%;
+}
+
+
+#middleBar{
+   	float : left;
+    width : 50%;
+    height : 100%;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+
+#rightBar{
+    float : left;
+    width : 29%;
+    height : 100%;
+}
+
+
+.feedBlock{
+   margin-bottom: 8px;
+}
+
+
+.feedBlockBody{
+   padding-left: 8px;
+   padding-right: 8px;
+   padding-top: 8px;
+   padding-bottom: 8px;
 }
