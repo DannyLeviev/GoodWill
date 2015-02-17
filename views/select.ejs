@@ -46,9 +46,30 @@
         <div class="panel-heading"></div>
       </div>
       <div id="middleBar">
+        <% for(var i =0; i < feeds.length; i++){ %>
         <div class="panel panel-primary feedBlock">
-            <div class="panel-body feedBlockBody">Put here relevant data from DB !!! And add at least several similar boxes using JS.</div>
+          <div class="panel-body feedBlockBody"> 
+            <div>
+              <a class="_5pb8 _5v9u _29h _303" aria-hidden="true" tabindex="0" id="js_8"><img class= 'personsImage' src='images/defaultPersonImage.png' alt=""></a>
+            </div>
+            <div>
+                <div class='nameAndTime'>
+                <div style="height:40px"> </div>
+                  <h5> <a href=""> <%= feeds[i].creator %> </a> </h5>
+                <div id="js_3">
+                  <span>    
+                    <abbr> <%= feeds[i].expirationDate %> </abbr>
+                  </span> 
+                </div>
+              </div>
+            </div>
+            <div class='feedText'>
+              <h3> <%=feeds[i].title %> </h3>
+              <p><%=feeds[i].text %> </p>
+            </div>
+          </div>
         </div>
+      <% }; %>
       </div>  
       <div id="rightBar">
         <div class="panel-heading"></div>

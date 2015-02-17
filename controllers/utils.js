@@ -1,39 +1,43 @@
 var feedsModel = require('../models/feeds');
 
-var getAllFeeds = function(res){
+var renderSelectView = function(res){
 	feedsModel.find({}, function(err, allFeeds){
-		if(err) console.log(err);
-		else renderSelectPage(res, allFeeds);  
-	})
+        	if(err) console.log(err);
+        	else res.render('select', {feeds: allFeeds}); 
+    	});	
 };
 
-
-var renderSelectPage = function(res, allFeeds){
-	//console.log(allFeeds);
-	res.render('select',{allFeedsCollection: allFeeds});
+var renderUsersFeeds = function(res, userId){
+	var usersFeeds = {asCreator: [], asTaker: []};
+	getUsersFeedsAsCreator(res, userId, usersFeeds);
 };
+	
 
-
-var getUsersFeeds = function(userId){
-	feedsModel.find({userid : userId},function(err, allFeeds){
+var getUsersFeedsAsCreator = function(res, userId, usersFeeds){
+	feedsModel.find({creator: userId},function(err, createdFeeds){
 		if(err) console.log(err);
-		else{
-			var usersFeeds = {
-				asCreator : [],
-				asTaker : []
-			};
-			for(i=0;i<allFeeds.lenght;i++){
-				if(allFeeds[i].creator==userId)
-					usersFeeds.asCreator.push(allFeeds[i]);
-			}
-			for(i=0;i<allFeeds.lenght;i++){
-				if(allFeeds[i].takenBy==userId)
-					usersFeeds.asTaker.push(allFeeds[i]);
-			}
-			return usersFeeds;
+		else{ 
+			usersFeeds.asCreator = createdFeeds;
+			getUsersFeedsAsTaker(res, userId, usersFeeds);
 		}
 	});
 };
 
-module.exports.getAllFeeds = getAllFeeds;
-module.exports.getUsersFeeds = getUsersFeeds;
+
+var getUsersFeedsAsTaker = function(res, userId, usersFeeds){
+	feedsModel.find({takenBy: userId},function(err, takedFeeds){
+		if(err) console.log(err);
+		else{
+			usersFeeds.asTaker = takedFeeds;
+			console.log(usersFeeds);
+			res.render('select', {feeds: usersFeeds.asCreator}); //Chang this to pass also the 'asTaker' feeds.
+		}
+	});
+};
+
+
+
+
+
+module.exports.renderSelectView = renderSelectView;
+module.exports.renderUsersFeeds = renderUsersFeeds;
