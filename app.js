@@ -55,5 +55,24 @@ app.use(function(err, req, res, next) {
     });
 });
 
+//This is a work around, TBD: take the pics path from DB !!!
+app.locals.userPicPathObj = {
+    'i111111' : 'images/Single_Mother.jpg',
+    'i222222' : 'images/Nursing_Home_Manager.jpg',
+    'i333333' : 'images/Director_of_Soup_Kitchen.jpg',
+    'i444444' : 'images/Neighborhood_Social_Activist.jpg',
+    'i555555' : 'images/Single_Mother.jpg',
+    'i666666' : 'images/Social_Worker_Hadera.jpg',
+    'i777777' : 'images/Social_Worker_Raanana.jpg',
+    'i888888' : 'images/Son_of_Holocaust_Survivor.jpg',
+    'i999999' : 'images/High_School_Student.jpg',           //2,
+    'i121212' : 'images/High_Tech_Worker.jpg',              //1,
+    'i232323' : 'images/Scholarship_Student_M.jpg',
+    'i343434' : 'images/Scholarship_Student_W.jpg',
+    'i454545' : 'images/Young_Lawyer_Wmn.jpg',
+    'i052846' : 'images/DannyLeviev.JPG'};
+
+
+
 
 module.exports = app;

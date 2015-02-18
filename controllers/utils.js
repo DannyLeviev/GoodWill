@@ -37,7 +37,5 @@ var getUsersFeedsAsTaker = function(res, userId, usersFeeds){
 
 
 
-
-
 module.exports.renderSelectView = renderSelectView;
 module.exports.renderUsersFeeds = renderUsersFeeds;

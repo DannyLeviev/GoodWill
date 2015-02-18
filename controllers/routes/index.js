@@ -24,7 +24,7 @@ router.get('/', function(req, res) {
 	//check if the user is already logged-in
 	if(req.user && req.user.username){
 		console.log('My log: ' + GLOBAL.userName + ' is still logged in.');
-		res.redirect('hitMe');
+		res.redirect('select');
 	}
 	//else load the login page
     else res.render('login');
@@ -33,7 +33,7 @@ router.get('/', function(req, res) {
 //Will be called on submit of the login form.
 router.post('/', passport.authenticate('local', {
 	failureRedirect: '/',
-	successRedirect: 'hitMe'
+	successRedirect: 'select'
 }));
 
 //Will be called if the user authenticated.
