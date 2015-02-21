@@ -22,8 +22,9 @@ router.use(passport.session());
 router.get('/', function(req, res) {
 	//check if the user is already logged-in
 	if(req.user && req.user.username){
+		//for(var prop in (req.user)) {console.log(prop + ': ' + req.user[prop])};
 		console.log("My Log: " + req.user.userName + " is still authenticated.");
-		res.redirect('req.user.username is empty !!!');
+		res.redirect('select');
 	}
 	//else load the login page
     else {res.render('login');}
@@ -38,7 +39,7 @@ router.post('/', passport.authenticate('local', {
 //Will be called if the user authenticated.
 router.get('/hitMe', function(req, res) {
 	//check if the user is still authenticated (no session timeout)
-	if(req.user && req.user.userName){
+	if(req.user && req.user.username){
 		console.log('My log: has entered the Hit Me page.');   //tbd user name...
 		res.render('hitMe');
 	}
@@ -60,7 +61,7 @@ router.get('/select', function(req, res) {
 
 router.get('/askHelp', function(req, res) {
 	//check if the user is still authenticated (no session timeout)
-	if(req.user && req.user.userName){
+	if(req.user && req.user.username){
 		console.log('My log: has entered the Ask Help page.'); //tbd user name...
 		res.render('askHelp');
 	}

@@ -27,7 +27,7 @@ passport.use(new LocalStrategy(
 				GLOBAL.userEmail = utils.goodWillArr[i].email;
 				GLOBAL.userPicPath = utils.goodWillArr[i].prfImagePath;
 				userObj = utils.goodWillArr[i];
-				console.log('My log: ' + GLOBAL.userName + ' authenticated.');
+				console.log('My log: UserId = ' + utils.goodWillArr[i].email + 'userName is: ' + utils.goodWillArr[i].name + ' is authenticated.');
 	 	 		return done(null, {userid: utils.goodWillArr[i].email, username: utils.goodWillArr[i].name});
 	 	 	}
 		}

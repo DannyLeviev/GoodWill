@@ -35,7 +35,8 @@
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li>
-              <a href="./yourProfile">Hello: <%= GLOBAL.userName%></a><!-- put here the User name/Email !!!!!!-->
+              <img src=<%= GLOBAL.userPicPath %> class="img-circle navBarImage">
+              <a style="float: left; " href="./yourProfile"> <%= GLOBAL.userName %></a>
             </li>
           </ul>
         </div><!--/.nav-collapse -->
@@ -44,25 +45,45 @@
     <div id="mainContainer" class="container-fluid askHelpMainDiv">
         <h1 style="margin-bottom: 40px; text-decoration: underline;"> Ceate New Feed: </h1>
         <form action="/askHelp" role="form" method="post">
-          <div class="form-group">
-            <label for="Name">Phone Number:</label>
-            <input type="text" class="form-control" name="phoneNumber" placeholder="< Enter contact phone number >">
+          <div class="row">
+            <div class="col-md-3">
+              <div class="form-group">
+                <label for="Name">Phone number for contact:</label>
+                <input type="text" class="form-control" name="phoneNumber" placeholder="<+972-xx-xxx-xxx>">
+              </div>
+            </div>
+            <div class="col-md-1"></div>
+            <div class="col-md-3">
+              <div class="form-group">
+                <label for="expirationDate">Expiration Date:</label>
+                <input type="date" class="form-control" name="expirationDate">
+              </div>
+            </div>
+            <div class="col-md-1"></div>
+            <div class="col-md-3">
+              <div class="form-group">
+                <div class="form-group">
+                  <label for="<label for=">Assign to:</label>
+                  <input type="text" class="form-control" name="assignedTo" placeholder="< Enter User Name >">
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="form-group">
-            <label for="expirationDate">Expiration Date:</label>
-            <input type="text" class="form-control" name="expirationDate"> <!-- TBD: concider to change the type to 'date' -->
+          <div class="row">
+            <div class="col-md-5">
+              <div class="form-group">
+                <label for="title">Title:</label>
+                <input type="text" class="form-control" name="title" placeholder="< Enter Title >">
+              </div>
+            </div>
           </div>
-          <div class="form-group">
-            <label for="<label for=">Assign to:</label>
-            <input type="text" class="form-control" name="assignedTo" placeholder="< Enter User Name >">
-          </div>
-          <div class="form-group">
-            <label for="title">Title:</label>
-            <input type="text" class="form-control" name="title" placeholder="< Enter Title >">
-          </div>
-          <div class="form-group">
-            <label for="description">Description:</label>
-            <textarea id="text" type="input" name="text" rows="4" class="form-control" placeholder="< Enter Description >"></textarea>
+          <div class="row">
+            <div class="col-md-7">
+              <div class="form-group">
+                <label for="description">Description:</label>
+                <textarea id="text" type="input" name="text" rows="3" class="form-control" placeholder="< Enter Description >"></textarea>
+              </div>
+            </div>
           </div>
           <button type="submit" class="btn btn-default">Send</button>
         </form>
