@@ -1,13 +1,14 @@
+
 body{
-    background-color: #e9eaed;
+  background-color: #e9eaed;
 }
 
 
 #loginContainer{
 	margin-top: 5%;
-    min-width: 300px;
-    width: 33%;
-    display: block;
+  min-width: 300px;
+  width: 33%;
+  display: block;
 }
 
 
@@ -19,52 +20,123 @@ body{
 
 #leftBar{
 	float : left;
-    width : 19%;
-    height : 100%;
+  width : 15%;
+  height : 100%;
 }
 
 
 #middleBar{
-   	float : left;
-    width : 50%;
-    height : 100%;
-    margin-left: 8px;
-    margin-right: 8px;
+  float : left;
+  width : 55%;
+  height : 100%;
+  margin-left: 8px;
+  margin-right: 8px;
 }
 
 
 #rightBar{
-    float : left;
-    width : 29%;
-    height : 100%;
+  float : left;
+  width : 23%;
+  height : 100%;
 }
 
 
+.navBarImage{
+  float: left;
+  height: 40px;
+  margin-top: 5px;
+}
+
 .feedBlock{
-   margin-bottom: 8px;
+  margin-bottom: 8px;
 }
 
 
 .feedBlockBody{
-   padding-left: 8px;
-   padding-right: 8px;
-   padding-top: 8px;
-   padding-bottom: 8px;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 8px;
+  padding-bottom: 8px;
 }
 
-.personsImage{
-  width: 40px;
-  height: 40px;
+.feedsImage{
+  float : left;
+  width: 50px;
+  height: 50px;
 }
 
-.nameAndTime{
+.feedsNameAndTime{
   position: relative;
-  top: -85px;
-  right: -60px;
-  font-weight: bold
+  top: -10px;
+  padding-left: 8px;
+  float : left;
+  color: #0066FF;
+  font-size: 14px;
 }   
 
 .feedText{
   position: relative;
-  top: -100px;
+  padding-top: 40px;
+  text-align: right;
+  direction: rtl;
 }
+
+.feedsCommentsContainer{
+  background-color: #DCEBF1;
+  padding : 8px;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border-top-color: #85AFD4;
+  border-top-style: dotted;
+  overflow:auto;
+}
+
+.feedsCommentImage{
+  float : left;
+  width: 30px;
+  height: 30px;
+}
+
+.feedsCommentName{
+  position: relative;
+  top: -10px;
+  padding-left: 8px;
+  float : left;
+  color: #0066FF;
+  font-size: 14px;
+  margin-bottom: 0px;
+}  
+
+.feedsCommentText{
+  float : right;
+  text-align: right;
+  direction: rtl;
+  width: 90%;
+  margin-bottom: 0px;
+  margin-top: -10px;
+}
+
+.textDirectionForHebrew{
+  text-align: right;
+  direction: rtl;
+}
+
+.hitMeLeftBar{
+  width : 10% !important;
+}
+
+
+.hitMeMiddleBar{
+  width : 80% !important;
+}
+
+
+.hitMeRightBar{
+  width : 10% !important;
+}
+
+.askHelpMainDiv{
+  margin-top: 120px !important;
+}
+
+

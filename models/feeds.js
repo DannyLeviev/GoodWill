@@ -9,7 +9,7 @@ var feedsSchema = new Schema({
 						       isDone:"string",
 						       title:"string",
 						       text:"string",
-						       image:"string"});
+						       contact:"string"});
 
 
 module.exports = mongoose.model('feeds', feedsSchema);

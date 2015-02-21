@@ -3,9 +3,9 @@ var Schema = mongoose.Schema;
 
 
 var usersSchema = new Schema({
-							   userid: 'string',
+							   email: 'string',
 							   password: 'string',
-							   username: 'string'});
+							   name: 'string'});
 
 
-module.exports = mongoose.model('users', usersSchema);
+module.exports = mongoose.model('goodWill', usersSchema);

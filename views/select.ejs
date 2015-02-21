@@ -35,7 +35,8 @@
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li>
-              <a href="./yourProfile">Hello: <%= GLOBAL.userName%></a>
+              <img src=<%= GLOBAL.userPicPath %> class="img-circle navBarImage">
+              <a style="float: left; " href="./yourProfile"> <%= GLOBAL.userName %></a>
             </li>
           </ul>
         </div><!--/.nav-collapse -->
@@ -46,33 +47,46 @@
         <div class="panel-heading"></div>
       </div>
       <div id="middleBar">
-        <% for(var i =0; i < feeds.length; i++){ %>
-        <div class="panel panel-primary feedBlock">
-          <div class="panel-body feedBlockBody"> 
-            <div>
-              <a class="_5pb8 _5v9u _29h _303" aria-hidden="true" tabindex="0" id="js_8"><img class= 'personsImage' src=<%= userPicPathObj[feeds[i].creator]%> alt=""></a>
-            </div>
-            <div>
-                <div class='nameAndTime'>
-                <div style="height:40px"> </div>
-                  <h5> <a href=""> <%= feeds[i].creator %> </a> </h5>
-                <div id="js_3">
-                  <span>    
-                    <abbr> <%= feeds[i].expirationDate %> </abbr>
-                  </span> 
+        <% for(var j = 0; j < appData.length; j++){ %>
+          <%for(var i = 0; i < appData[j].feeds.length; i++){ %>
+            <div class="panel panel-primary feedBlock">
+              <div class="panel-body feedBlockBody"> 
+                <div>
+                  <% var imagePath = appData[j].prfImagePath || 'images/defaultPersonImage.png'; %>
+                  <img class= 'feedsImage' src=<%= imagePath %>>
+                  <div class='feedsNameAndTime'>
+                    <h5> <%= appData[j].name %> </h5>  
+                    <h5> <%= appData[j].feeds[i].expDate %> <h5>
+                  </div>
+                </div>
+                <div class='feedText'>
+                  <h3><strong> <%= appData[j].feeds[i].title %> </strong></h3>
+                  <p><%= appData[j].feeds[i].text %> </p>
                 </div>
               </div>
+              <% if(appData[j].feeds[i].comments.length > 0){ %>
+              <div class='feedsCommentsContainer'>
+                <% for(var n = 0; n < appData[j].feeds[i].comments.length; n++){ %>
+                  <div>
+                    <% var imagePath = 'images/defaultPersonImage.png'; %>
+                    <% for(m = 0; m < appData.length; m++){ %>
+                      <% if(appData[m].name == appData[j].feeds[i].comments[n].commenterName){ %>
+                        <% imagePath = appData[m].prfImagePath; }%>
+                    <% } %>
+                    <img class= 'feedsCommentImage' src= <%= imagePath %>>
+                    <h5 class='feedsCommentName'> <%= appData[j].feeds[i].comments[n].commenterName %> </h5>
+                    <p class='feedsCommentText'> <%= appData[j].feeds[i].comments[n].text %> </p>
+                  </div>
+                <% }; %>
+              </div>
+              <% }; %>
             </div>
-            <div class='feedText'>
-              <h3> <%=feeds[i].title %> </h3>
-              <p><%=feeds[i].text %> </p>
-            </div>
-          </div>
-        </div>
-      <% }; %>
+          <% }; %>
+        <% }; %>
       </div>  
       <div id="rightBar">
-        <div class="panel-heading"></div>
+        <div class="panel-heading">
+        </div>
       </div>
     </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

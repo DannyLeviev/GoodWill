@@ -41,6 +41,32 @@
         </div><!--/.nav-collapse -->
       </div>
     </nav>
+    <div id="mainContainer" class="container-fluid askHelpMainDiv">
+        <h1 style="margin-bottom: 40px; text-decoration: underline;"> Ceate New Feed: </h1>
+        <form action="/askHelp" role="form" method="post">
+          <div class="form-group">
+            <label for="Name">Phone Number:</label>
+            <input type="text" class="form-control" name="phoneNumber" placeholder="< Enter contact phone number >">
+          </div>
+          <div class="form-group">
+            <label for="expirationDate">Expiration Date:</label>
+            <input type="text" class="form-control" name="expirationDate"> <!-- TBD: concider to change the type to 'date' -->
+          </div>
+          <div class="form-group">
+            <label for="<label for=">Assign to:</label>
+            <input type="text" class="form-control" name="assignedTo" placeholder="< Enter User Name >">
+          </div>
+          <div class="form-group">
+            <label for="title">Title:</label>
+            <input type="text" class="form-control" name="title" placeholder="< Enter Title >">
+          </div>
+          <div class="form-group">
+            <label for="description">Description:</label>
+            <textarea id="text" type="input" name="text" rows="4" class="form-control" placeholder="< Enter Description >"></textarea>
+          </div>
+          <button type="submit" class="btn btn-default">Send</button>
+        </form>
+    </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="jquery/dist/jquery.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->

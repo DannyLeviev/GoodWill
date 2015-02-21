@@ -6,7 +6,6 @@ var passport = require('../authentication');
 var expressSession = require('express-session'); 
 //establishing the connection to mongoDB.
 var db = require('../db_connection'); 
-var feedsModel = require('../../models/feeds');
 //use the Utile file
 var utils = require('../utils');
 
@@ -23,11 +22,11 @@ router.use(passport.session());
 router.get('/', function(req, res) {
 	//check if the user is already logged-in
 	if(req.user && req.user.username){
-		console.log('My log: ' + GLOBAL.userName + ' is still logged in.');
-		res.redirect('select');
+		console.log(req.user);   //tbd user name...
+		res.redirect('req.user.username is empty !!!');
 	}
 	//else load the login page
-    else res.render('login');
+    else {console.log(''); res.render('login');}
 });
 
 //Will be called on submit of the login form.
@@ -39,9 +38,8 @@ router.post('/', passport.authenticate('local', {
 //Will be called if the user authenticated.
 router.get('/hitMe', function(req, res) {
 	//check if the user is still authenticated (no session timeout)
-	if(req.user && req.user.username){
-		GLOBAL.userName = req.user.username;
-		console.log('My log: ' + GLOBAL.userName + ' has entered the Hit Me page.');
+	if(req.user && req.user.userName){
+		console.log('My log: has entered the Hit Me page.');   //tbd user name...
 		res.render('hitMe');
 	}
 	//else load the login page
@@ -52,8 +50,7 @@ router.get('/hitMe', function(req, res) {
 router.get('/select', function(req, res) {
 	//check if the user is still authenticated (no session timeout)
 	if(req.user && req.user.username){
-		GLOBAL.userName = req.user.username;
-		console.log('My log: ' + GLOBAL.userName + ' has entered the Select page.');
+		console.log('My log: ' + req.user.username + ' has entered the Select page.');
 		utils.renderSelectView(res);
 	}
 	//else load the login page
@@ -63,9 +60,8 @@ router.get('/select', function(req, res) {
 
 router.get('/askHelp', function(req, res) {
 	//check if the user is still authenticated (no session timeout)
-	if(req.user && req.user.username){
-		GLOBAL.userName = req.user.username;
-		console.log('My log: ' + GLOBAL.userName + ' has entered the Ask Help page.');
+	if(req.user && req.user.userName){
+		console.log('My log: has entered the Ask Help page.'); //tbd user name...
 		res.render('askHelp');
 	}
 	//else load the login page
@@ -73,15 +69,21 @@ router.get('/askHelp', function(req, res) {
 });
 
 
+//Will be called on submit of the Send button of the Create New Feed form.
+router.post('/askHelp', function(req, res){
+	utils.saveNewFeed(req, res);
+});
+
+
 router.get('/yourProfile', function(req, res) {
 	//check if the user is still authenticated (no session timeout)
-	if(req.user && req.user.username){
-		GLOBAL.userName = req.user.username;
-		console.log('My log: ' + GLOBAL.userName + ' has entered the Your Profile page.');
+	if(req.user && req.user.userName){
+		console.log('My log:  has entered the Your Profile page.');  //tbd user name...
 		res.render('yourProfile');
 	}
 	//else load the login page
     else res.render('login');
 });
+
 
 module.exports = router;
