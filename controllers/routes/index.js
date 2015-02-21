@@ -22,11 +22,11 @@ router.use(passport.session());
 router.get('/', function(req, res) {
 	//check if the user is already logged-in
 	if(req.user && req.user.username){
-		console.log(req.user);   //tbd user name...
+		console.log("My Log: " + req.user.userName + " is still authenticated.");
 		res.redirect('req.user.username is empty !!!');
 	}
 	//else load the login page
-    else {console.log(''); res.render('login');}
+    else {res.render('login');}
 });
 
 //Will be called on submit of the login form.
