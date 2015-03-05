@@ -1,47 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="application-name" content="GoodWill">
-    <meta name="author" content="Danny Leviev">
-    <link rel="icon" href="images/favicon.ico">
-    <!-- Bootstrap core CSS -->
-    <link href="bootstrap/dist/css/bootstrap.css" rel="stylesheet">
-    <!-- Bootstrap theme -->
-    <link href="bootstrap/dist/css/bootstrap-theme.css" rel="stylesheet">
-    <!-- My custom CSS file -->
-    <link href="stylesheets/custom.css" rel="stylesheet">
-  </head>
-
+<% include header %>
   <body role="document">
-    <nav class="navbar navbar-inverse navbar-fixed-top nav-custom-color">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand">GoodWill</a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav"> 
-            <li class="active"><a href="./select">Select</a></li>
-            <li><a href="./hitMe">Hit me!!!</a></li>
-            <li><a href="./askHelp">Ask Help</a></li>
-          </ul>
-          <ul class="nav navbar-nav navbar-right">
-            <li>
-              <img src=<%= GLOBAL.userPicPath %> class="img-circle navBarImage">
-              <a style="float: left; " href="./yourProfile"> <%= GLOBAL.userName %></a>
-            </li>
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-    </nav>
+    <% include navBar %>
     <div id="mainContainer" class="container-fluid">
       <div id="leftBar"> 
         <div class="panel-heading"></div>
@@ -93,5 +52,7 @@
     <script src="jquery/dist/jquery.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="bootstrap/dist/js/bootstrap.js"></script>
+    <!--Dynamically change the active tab of the navBar -->
+    <script> document.getElementById('selectListItem').className = "active"; </script>
   </body>
 </html>

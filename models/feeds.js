@@ -2,14 +2,24 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 
-var feedsSchema = new Schema({
-							   creator:"string",
-							   expirationDate:"string",
-						       takenBy:"string",
-						       isDone:"string",
-						       title:"string",
-						       text:"string",
-						       contact:"string"});
+var feedSchema = new mongoose.Schema({
+							   			email: String,
+										name: String,
+										password: String,
+										prfImagePath: String,
+										contact: String,
+										feeds: [{
+											title: String,
+											text: String,
+											expDate: String,
+											assignedTo: String,
+											status: String,
+											comments: [{
+												commenterName: String,
+												text: String
+											}]
+										}]
+							   		});
 
 
-module.exports = mongoose.model('feeds', feedsSchema);
+module.exports = mongoose.model('feed', feedSchema);
