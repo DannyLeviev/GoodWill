@@ -1,0 +1,26 @@
+<% if(messages) {%>
+	<% if(messages.errorsArr.length){ %>
+		<div class="alert alert-danger"> 
+			<% for(var i=0; i < messages.errorsArr.length; i++) {%>
+				<%= messages.errorsArr[i] %>
+				</br>
+			<% } %>
+		</div>
+	<% } %>
+	<% if(messages.worningsArr.length){ %>
+		<div class="alert alert-warning"> 
+			<% for(var i=0; i < messages.worningsArr.length; i++) {%>
+				<%= messages.worningsArr[i] %>
+				</br>
+			<% } %>
+		</div>
+	<% } %>
+	<% if(messages.infosArr.length){ %>
+		<div class="alert alert-info"> 
+			<% for(var i=0; i < messages.infosArr.length; i++) {%>
+				<%= messages.infosArr[i] %>
+				</br>
+			<% } %>
+		</div>
+	<% } %>
+<% } %>

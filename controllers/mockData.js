@@ -1,9 +1,9 @@
-var feedsModel = require('../models/feeds');
+var UsersContent = require('../models/UserContent');
 
 //Self executing function to add the mock data to the DB
 //on the start of the App (on load of this file). 
 (function(){
-	feedsModel.remove({password: "admin"}, function(err, fakeFeeds){
+	UsersContent.remove({password: "admin"}, function(err, fakeFeeds){
 		if(err) console.log(err);
 		else{
 			console.log('GW log: Deletion of old Mock Feeds from mongo DB was completed.');
@@ -216,7 +216,7 @@ var createNewFakeFeeds = function(){
 	feeds: []
 }
 ];
-feedsModel.create(newFeeds, function(err, feeds){
+UsersContent.create(newFeeds, function(err, feeds){
 			if(err) console.log(err);
 		});
 	console.log('GW log: Addition of new Mock Feeds to mongo DB was completed.');

@@ -27,15 +27,34 @@ router.get('/', function(req, res) {
 	}
 	//else load the login page
     else {
-    		res.render('login');
+    		utils.renderLoginView(req, res);
     }
 });
 
 //Will be called on submit of the login form.
 router.post('/', passport.authenticate('local', {
-	failureRedirect: '/',
+	failureRedirect: 'relogin',
 	successRedirect: 'select'
 }));
+
+
+router.get('/relogin', function(req, res){
+	req.flash('error', 'Incorrect username or password, please try again !');
+	req.flash('info', 'this is info !!!');
+	res.redirect('/');
+});
+
+
+router.get('/select', function(req, res) {
+	//check if the user is still authenticated (no session timeout)
+	if(req.user && req.user.name){
+		console.log('GW Log: ' + req.user.name + ' has entered the Select page.');
+		utils.renderSelectView(req, res);
+	}
+	//else load the login page
+    else utils.renderLoginView(req, res);
+});
+
 
 //Will be called if the user authenticated.
 router.get('/hitMe', function(req, res) {
@@ -45,30 +64,19 @@ router.get('/hitMe', function(req, res) {
 		res.render('hitMe');
 	}
 	//else load the login page
-    else res.render('login');
+    else utils.renderLoginView(req, res);
 });
 
-
-router.get('/select', function(req, res) {
-	//check if the user is still authenticated (no session timeout)
-	if(req.user && req.user.name){
-		console.log('GW Log: ' + req.user.name + ' has entered the Select page.');
-		//for(var prop in req.user) console.log(req.user[prop]);
-		utils.renderSelectView(req, res);
-	}
-	//else load the login page
-    else res.render('login');
-});
 
 
 router.get('/askHelp', function(req, res) {
 	//check if the user is still authenticated (no session timeout)
 	if(req.user && req.user.name){
-		console.log('My log: ' + req.user.name + ' has entered the Ask Help page.'); //tbd user name...
-		res.render('askHelp');
+		console.log('GW Log: ' + req.user.name + ' has entered the Ask Help page.');
+		utils.renderAskHelpView(req, res);
 	}
 	//else load the login page
-    else res.render('login');
+    else utils.renderLoginView(req, res);
 });
 
 
@@ -81,11 +89,11 @@ router.post('/askHelp', function(req, res){
 router.get('/yourProfile', function(req, res) {
 	//check if the user is still authenticated (no session timeout)
 	if(req.user && req.user.name){
-		console.log('My log: ' + req.user.name + ' has entered the Your Profile page.');  //tbd user name...
+		console.log('GW Log: ' + req.user.name + ' has entered the Your Profile page.');
 		res.render('yourProfile');
 	}
 	//else load the login page
-    else res.render('login');
+    else utils.renderLoginView(req, res);
 });
 
 

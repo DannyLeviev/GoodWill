@@ -1,12 +1,12 @@
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
-var feedsModel = require('../models/feeds');
+var UsersContents = require('../models/UserContent');
 
 
 
 passport.use(new LocalStrategy(
 	 function(username, password, done){ 
-	 	feedsModel.findOne({email: username}, function(err, user){
+	 	UsersContents.findOne({email: username}, function(err, user){
 	 		if(err){
 	 			console.log(err);
 	 			res.status(500).json({status: 'failure'});
@@ -14,8 +14,8 @@ passport.use(new LocalStrategy(
 	 		else{
 	 			if(user && user.password == password){
 	 				console.log('GW log: Successful login - ' + user.name + ' was authenticated.');
-	 				GLOBAL.userName = user.name;     //So it could be available for other Views
-	 				GLOBAL.userEmail = user.email;   //So it could be available for other Views
+	 				GLOBAL.userName = user.name;     //Exposing for other Views
+	 				GLOBAL.userEmail = user.email;   //Exposing for other Views
 	 				return done(null, {id: user.email, name: user.name});
 	 			}
 	 			return done(null, false);

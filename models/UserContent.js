@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 
-var feedSchema = new mongoose.Schema({
+var userContentSchema = new mongoose.Schema({
 							   			email: String,
 										name: String,
 										password: String,
@@ -22,4 +22,4 @@ var feedSchema = new mongoose.Schema({
 							   		});
 
 
-module.exports = mongoose.model('feed', feedSchema);
+module.exports = mongoose.model('Users_Content', userContentSchema);

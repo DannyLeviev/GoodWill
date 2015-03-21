@@ -1,6 +1,11 @@
-<% include header %>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <% include header %>
+  </head>
   <body role="document">
     <% include navBar %>
+    <% include flashMessages %>
     <div id="mainContainer" class="container-fluid askHelpMainDiv">
         <h1 style="margin-bottom: 40px; text-decoration: underline;"> Ceate New Feed: </h1>
         <form action="/askHelp" role="form" method="post">
